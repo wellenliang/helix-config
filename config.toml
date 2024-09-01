@@ -1,0 +1,66 @@
+theme = "ayu_dark"
+
+[editor]
+true-color = true
+undercurl = true
+auto-completion = true
+auto-info = true
+line-number = "relative"
+cursorline = true
+auto-format = true
+color-modes = true
+idle-timeout = 40
+
+[editor.soft-wrap]
+enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[editor.statusline]
+left = [
+  "mode", 
+  "spinner",
+  "version-control",
+  "read-only-indicator",
+  "file-name",
+  "file-modification-indicator",
+]
+
+center = [
+  "diagnostics",
+  "workspace-diagnostics",
+]
+
+right = [
+  "register",
+  "selections",
+  "primary-selection-length",
+  "file-encoding",
+  "file-line-ending",
+  "position",
+  "position-percentage",
+  "file-type",
+]
+separator = "⸽"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[keys.normal]
+# smart tab
+tab = "move_parent_node_end"
+S-tab = "move_parent_node_start"
+"C-s" = ":write"
+"A-/" = "toggle_comments"
+"C-g" = [":new" , ":insert-output lazygit", ":buffer-close!", ":redraw"]
+
+[keys.select]
+tab = "extend_parent_node_end"
+S-tab = "extend_parent_node_start"
